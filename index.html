@@ -1,154 +1,226 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Защита контрольных работ и экзамен</title>
 </head>
+
 <body>
-    <div class="start">
-        <div class="chooseTest">
-            <div class="FIO"><label  for="">Выберите испытание и введите свои фамилию, имя и отчество в поле ниже: <br>
-                <select name="" id="">
-                    <option value="">Экзамен</option>
-                    <option value="">Защита контрольных работ</option>
-                </select> <br>
-                <input class="inp0" name="name" placeholder="Фамилия Имя Отчество" type="text"></label>
+<div class="start">
+    <div class="chooseTest">
+        <div class="FIO"><label for="">Для начала защиты контрольных работ по ТБДП введите свои фамилию, имя и отчество в поле ниже и нажмите кнопку "Получить билет" <br>
+
+            <input class="inp0" name="name" placeholder="Фамилия Имя Отчество" type="text"></label>
+            <br>
             <button class="generate">Получить билет</button>
-            <p><i>Условия: допускается использование лекций, методических указаний и контрольных работ, время на испытание 35 минут. Обратный отсчет начнется после нажатия кнопку "Получить билет"</i></p>
-            </div>
+            <p><i>Условия: допускается использование лекций, методических указаний и контрольных работ, время на
+                испытание 30 минут. Обратный отсчет начнется после нажатия кнопку "Получить билет"</i></p>
         </div>
     </div>
-    <div class="block">
-        <div class="mess">
-            <span class = "tex"></span><br>
-            <button class="clos">Ok</button>
-                <input class='passClos' type="password">
-        </div>
+</div>
+<div class="block">
+    <div class="mess">
+        <span class="tex"></span><br>
+        <button class="clos">Ok</button>
+        <input class='passClos' type="password">
     </div>
-    <span id="r"></span>
-    <textarea placeholder="Поле для заметок"></textarea>
-    <div class="bilet">
-        <div class="leftHalf">
-            
-            <div class="qu1"><h4>Вопрос 1</h4> Укажите, какой параметр пассажиров и грузов изменяется при нормальном течении перевозочного процесса. <br>  
-                <input class="inp1" placeholder="Одно слово в единственном числе, в именительном падеже" type="text">
-            </div>
-            <div class="qu2"><h4>Вопрос 2</h4> Укажите, при выполнении каких из работ в ходе перевозочного процесса <span id="s20">******</span> возникают поражающие факторы. <br>
-                <label> <input class="inp2" type="checkbox">  А) Коммерческая работа </label>    <br>    		
-                <label> <input class="inp2" type="checkbox">  Б) Маневровая работа  </label>  <br>
-                <label> <input class="inp2" type="checkbox">  В) Грузовая работа </label><br>
-                <label> <input class="inp2" type="checkbox">  Г) Поездная работа</label><br>
-            </div>
-            <div class="qu3"><h4>Вопрос 3</h4> Укажите, какие объекты <span id="s30">******</span> являются составляющими транспортной системы (ТС). <br>
-                <label> <input  class="inp3" type="checkbox"> А) Технические средства ТС </label><br>
-                <label> <input  class="inp3" type="checkbox"> Б) Мат. ценности на выходе ТС </label>	<br>
-                <label> <input  class="inp3" type="checkbox"> В) Пассажиры внутри поезда 		</label><br>
-                <label> <input  class="inp3" type="checkbox"> Г) Люди на выходе ТС </label><br>
-                <label> <input  class="inp3" type="checkbox"> Д) Мат. ценности на входе ТС </label><br>
-                <label> <input  class="inp3" type="checkbox"> Е) Технический персонал ТС </label><br>
-                <label> <input  class="inp3" type="checkbox"> Ж) Грузы внутри поезда </label><br>
-                <label> <input  class="inp3" type="checkbox"> И) Люди на входе ТС</label>
-            </div>
-            <div class="qu4"><h4>Вопрос 4</h4> Укажите, из каких подмножеств состоит множество <span id="s40">******</span> по параметрам движения поезда состояний транспортной системы согласно множествам состояний процесса движения поезда. <br>
-                <label> <input  class="inp4" type="checkbox"> А) S<sub>О</sub> </label><br>
-                <label> <input  class="inp4" type="checkbox"> Б) S<sub>Ш</sub> 		</label>	<br>
-                <label> <input  class="inp4" type="checkbox"> В) S<sub>Н</sub> </label><br>
-                <label> <input  class="inp4" type="checkbox"> Г) S<sub>З</sub> </label><br>
-                <label> <input  class="inp4" type="checkbox"> Д) S<sub>НН</sub></label><br>
-                </div>
-            <div class="qu5"><h4>Вопрос 5</h4> Укажите, в какие состояния может перейти процесс движения поезда из <span id="s50">******</span> состояния. <br>
-                <label> <input  class="inp5" type="checkbox"> А) Нештатное неопасное состояние 	</label><br>
-                <label> <input  class="inp5" type="checkbox"> Б) Защищённое состояние </label><br>
-                <label> <input  class="inp5" type="checkbox"> В) Штатное состояние </label><br>
-                <label> <input  class="inp5" type="checkbox"> Г) Опасное состояние </label><br>
-                <label> <input  class="inp5" type="checkbox"> Д) Незащищённое состояние</label><br>
-                </div>
-            <div class="qu6"><h4>Вопрос 6</h4> Укажите, какие факторы <span id="s60">******</span> относятся к <span id="s61">******</span>. <br>
-                <label> <input  class="inp6" type="checkbox"> А) Отказ груза </label><br>
-                <label> <input  class="inp6" type="checkbox"> Б) Инерция груза </label><br>
-                <label> <input  class="inp6" type="checkbox"> В) Высокая температура </label><br>
-                <label> <input  class="inp6" type="checkbox"> Г) Радиация </label><br>
-                <label> <input  class="inp6" type="checkbox"> Д) Отказы аппаратных средств 	</label><br>
-                <label> <input  class="inp6" type="checkbox"> Е) Распространение болезнетворных бактерий </label><br>
-                <label> <input  class="inp6" type="checkbox"> Ж) Распространение биологически опасных веществ </label><br>
-                <label> <input  class="inp6" type="checkbox"> И) Механическое воздействие конструкций подвижного состава </label><br>
-                <label> <input  class="inp6" type="checkbox"> К) Отказы технических средств </label><br>
-                <label> <input  class="inp6" type="checkbox"> Л) Ошибки в действиях технического персонала </label><br>
-                <label> <input  class="inp6" type="checkbox"> М) Ошибочные действия пассажиров </label><br>
-                <label> <input  class="inp6" type="checkbox"> Н) Ошибки программных средств </label><br>
-                <label> <input  class="inp6" type="checkbox"> П) Инерция тела пассажира </label><br>
-                <label> <input  class="inp6" type="checkbox"> Р) Ударная волна взрыва </label><br>
-                <label> <input  class="inp6" type="checkbox"> С) Токсичность вещества</label><br>
-                </div>
-            <div class="qu7"><h4>Вопрос 7</h4> Укажите уровень тяжести последствий, если опасная ситуация привела к <span id="s70">******</span>. <br>
-                <input class="inp7" placeholder="Одно слово в единственном числе, в именительном падеже" type="text">
-                </div>
-            <div class="qu8"><h4>Вопрос 8</h4> Укажите, какие группы методов анализа безопасности основываются на <span id="s80">******</span>. <br>
-                <label> <input  class="inp8" type="checkbox"> А) Априорные </label><br>
-                <label> <input  class="inp8" type="checkbox"> Б) Апостериорные </label><br>
-                <label> <input  class="inp8" type="checkbox"> В) Байесовские</label><br>
-            </div>
-            <div class="qu9"><h4>Вопрос 9</h4> Укажите, какому принципу методов повышения безопасности соответствует <span id="s90">******</span>. <br>
-                <label> <input name="er" class="inp9" type="radio"> А) Увеличение коэффициента парирования опасных отказов </label><br>
-                <label> <input name="er" class="inp9" type="radio"> Б) Уменьшение числа видов опасных ошибок </label><br>
-                <label> <input name="er" class="inp9" type="radio"> В) Уменьшение числа видов опасных отказов </label><br>
-                <label> <input name="er" class="inp9" type="radio"> Г) Увеличение коэффициента парирования опасных ошибок </label><br>
-                <label> <input name="er" class="inp9" type="radio"> Д) Уменьшение интенсивности опасных отказов </label><br>
-                <label> <input name="er" class="inp9" type="radio"> Е) Уменьшение интенсивности опасных ошибок</label><br>
-                </div>
-            <div class="qu10"><h4>Вопрос 10</h4> Для варианта <span id="s100">******</span> из контрольной работы № 1 рассчитайте значение <span id="s101">******</span>. Решение запишите ниже. <br>
-                <input  class="inp10" maxlength="11" placeholder="В ответе 9 знаков после запятой, например, 0,000025100 или 0.000025100" type="text"><label> </label></div>
-            <div class="qu11"><h4>Вопрос 11</h4> Для варианта <span id="s110">******</span> из контрольной работы № 2 рассчитайте параметр <span id="s111">******</span>. Решение запишите ниже.<br>
-                <input  class="inp11" maxlength="8" placeholder="В ответе 6 знаков после запятой, например, 0,002510 или 0.002510" type="text"><label> </label></div>
-            <div class="qu12"><h4>Вопрос 12</h4> Укажите уровень риска по <span id="s120">******</span> согласно матрице рисков, приведенной в контрольной работе № 2, если вероятность возникновения риска для ОИ по безопасности при движении поездов – <span id="s121">******</span>, последствия риска по безотказности для ОИ – <span id="s122">******</span> рублей, уровень тяжести последствий при нарушении безопасности движения поездов – <span id="s123">******</span>, вероятность риска по безотказности для ОИ – <span id="s124">******</span>.<br>
-                <input  class="inp12" maxlength="10" placeholder="В ответе буква и цифра без пробелов (раскладка - кириллица), например, К1" type="text"><label> </label></div>
-            <div class="qu13"><h4>Вопрос 13</h4>Выберите вариант временной диаграммы случайных импульсных потоков, если в интервале [<i>t</i><sub>1</sub>-<i>t</i><sub>2</sub>] <span id="s131">******</span>. <br>
-            
+</div>
+<span id="r"></span>
+<textarea placeholder="Поле для заметок"></textarea>
+<div class="bilet">
+    <div class="leftHalf">
+
+        <div class="qu1">
+            <h4>Вопрос 1</h4> Укажите, какой параметр пассажиров и грузов изменяется при нормальном течении
+            перевозочного процесса. <br>
+            <input class="inp1" placeholder="Одно слово в единственном числе, в именительном падеже" type="text">
+        </div>
+        <div class="qu2">
+            <h4>Вопрос 2</h4> Укажите, при выполнении каких из работ в ходе перевозочного процесса <span
+                id="s20">******</span> возникают поражающие факторы. <br>
+            <label> <input class="inp2" type="checkbox"> А) Коммерческая работа </label> <br>
+            <label> <input class="inp2" type="checkbox"> Б) Маневровая работа </label> <br>
+            <label> <input class="inp2" type="checkbox"> В) Грузовая работа </label><br>
+            <label> <input class="inp2" type="checkbox"> Г) Поездная работа</label><br>
+        </div>
+        <div class="qu3">
+            <h4>Вопрос 3</h4> Укажите, какие объекты <span id="s30">******</span> являются составляющими
+            транспортной системы (ТС). <br>
+            <label> <input class="inp3" type="checkbox"> А) Технические средства ТС </label><br>
+            <label> <input class="inp3" type="checkbox"> Б) Мат. ценности на выходе ТС </label> <br>
+            <label> <input class="inp3" type="checkbox"> В) Пассажиры внутри поезда </label><br>
+            <label> <input class="inp3" type="checkbox"> Г) Люди на выходе ТС </label><br>
+            <label> <input class="inp3" type="checkbox"> Д) Мат. ценности на входе ТС </label><br>
+            <label> <input class="inp3" type="checkbox"> Е) Технический персонал ТС </label><br>
+            <label> <input class="inp3" type="checkbox"> Ж) Грузы внутри поезда </label><br>
+            <label> <input class="inp3" type="checkbox"> И) Люди на входе ТС</label>
+        </div>
+        <div class="qu4">
+            <h4>Вопрос 4</h4> Укажите, из каких подмножеств состоит множество <span id="s40">******</span> по
+            параметрам движения поезда состояний транспортной системы согласно множествам состояний процесса
+            движения поезда. <br>
+            <label> <input class="inp4" type="checkbox"> А) S<sub>О</sub> </label><br>
+            <label> <input class="inp4" type="checkbox"> Б) S<sub>Ш</sub> </label> <br>
+            <label> <input class="inp4" type="checkbox"> В) S<sub>Н</sub> </label><br>
+            <label> <input class="inp4" type="checkbox"> Г) S<sub>З</sub> </label><br>
+            <label> <input class="inp4" type="checkbox"> Д) S<sub>НН</sub></label><br>
+        </div>
+        <div class="qu5">
+            <h4>Вопрос 5</h4> Укажите, в какие состояния может перейти процесс движения поезда из <span
+                id="s50">******</span> состояния. <br>
+            <label> <input class="inp5" type="checkbox"> А) Нештатное неопасное состояние </label><br>
+            <label> <input class="inp5" type="checkbox"> Б) Защищённое состояние </label><br>
+            <label> <input class="inp5" type="checkbox"> В) Штатное состояние </label><br>
+            <label> <input class="inp5" type="checkbox"> Г) Опасное состояние </label><br>
+            <label> <input class="inp5" type="checkbox"> Д) Незащищённое состояние</label><br>
+        </div>
+        <div class="qu6">
+            <h4>Вопрос 6</h4> Укажите, какие факторы <span id="s60">******</span> относятся к <span
+                id="s61">******</span>. <br>
+            <label> <input class="inp6" type="checkbox"> А) Отказ груза </label><br>
+            <label> <input class="inp6" type="checkbox"> Б) Инерция груза </label><br>
+            <label> <input class="inp6" type="checkbox"> В) Высокая температура </label><br>
+            <label> <input class="inp6" type="checkbox"> Г) Радиация </label><br>
+            <label> <input class="inp6" type="checkbox"> Д) Отказы аппаратных средств </label><br>
+            <label> <input class="inp6" type="checkbox"> Е) Распространение болезнетворных бактерий </label><br>
+            <label> <input class="inp6" type="checkbox"> Ж) Распространение биологически опасных веществ
+            </label><br>
+            <label> <input class="inp6" type="checkbox"> И) Механическое воздействие конструкций подвижного состава
+            </label><br>
+            <label> <input class="inp6" type="checkbox"> К) Отказы технических средств </label><br>
+            <label> <input class="inp6" type="checkbox"> Л) Ошибки в действиях технического персонала </label><br>
+            <label> <input class="inp6" type="checkbox"> М) Ошибочные действия пассажиров </label><br>
+            <label> <input class="inp6" type="checkbox"> Н) Ошибки программных средств </label><br>
+            <label> <input class="inp6" type="checkbox"> П) Инерция тела пассажира </label><br>
+            <label> <input class="inp6" type="checkbox"> Р) Ударная волна взрыва </label><br>
+            <label> <input class="inp6" type="checkbox"> С) Токсичность вещества</label><br>
+        </div>
+        <div class="qu7">
+            <h4>Вопрос 7</h4> Укажите уровень тяжести последствий, если опасная ситуация привела к <span
+                id="s70">******</span>. <br>
+            <input class="inp7" placeholder="Одно слово в единственном числе, в именительном падеже" type="text">
+        </div>
+        <div class="qu8">
+            <h4>Вопрос 8</h4> Укажите, какие группы методов анализа безопасности основываются на <span
+                id="s80">******</span>. <br>
+            <label> <input class="inp8" type="checkbox"> А) Априорные </label><br>
+            <label> <input class="inp8" type="checkbox"> Б) Апостериорные </label><br>
+            <label> <input class="inp8" type="checkbox"> В) Байесовские</label><br>
+        </div>
+        <div class="qu9">
+            <h4>Вопрос 9</h4> Укажите, какому принципу методов повышения безопасности соответствует <span
+                id="s90">******</span>. <br>
+            <label> <input name="er" class="inp9" type="radio"> А) Увеличение коэффициента парирования опасных
+                отказов </label><br>
+            <label> <input name="er" class="inp9" type="radio"> Б) Уменьшение числа видов опасных ошибок
+            </label><br>
+            <label> <input name="er" class="inp9" type="radio"> В) Уменьшение числа видов опасных отказов
+            </label><br>
+            <label> <input name="er" class="inp9" type="radio"> Г) Увеличение коэффициента парирования опасных
+                ошибок </label><br>
+            <label> <input name="er" class="inp9" type="radio"> Д) Уменьшение интенсивности опасных отказов
+            </label><br>
+            <label> <input name="er" class="inp9" type="radio"> Е) Уменьшение интенсивности опасных
+                ошибок</label><br>
+        </div>
+        <div class="qu10">
+            <h4>Вопрос 10</h4> Для варианта <span id="s100">******</span> из контрольной работы № 1 рассчитайте
+            значение <span id="s101">******</span>. Решение запишите ниже. <br>
+            <input class="inp10" maxlength="11"
+                   placeholder="В ответе 9 знаков после запятой, например, 0,000025100 или 0.000025100"
+                   type="text"><label> </label>
+        </div>
+        <div class="qu12">
+            <h4>Вопрос 11</h4> Укажите уровень риска по <span id="s120">******</span> согласно матрице рисков,
+            приведенной в контрольной работе № 2, если вероятность возникновения риска для ОИ по безопасности при
+            движении поездов – <span id="s121">******</span>, последствия риска по безотказности для ОИ – <span
+                id="s122">******</span> рублей, уровень тяжести последствий при нарушении безопасности движения
+            поездов – <span id="s123">******</span>, вероятность риска по безотказности для ОИ – <span
+                id="s124">******</span>.<br>
+            <input class="inp12" maxlength="10"
+                   placeholder="В ответе буква и цифра без пробелов (раскладка - кириллица), например, К1"
+                   type="text"><label> </label>
+        </div>
+        <div class="qu13">
+            <h4>Вопрос 12</h4>Выберите вариант временной диаграммы случайных импульсных потоков, если в интервале
+            [<i>t</i><sub>1</sub>-<i>t</i><sub>2</sub>] <span id="s131">******</span>. <br>
+
             <img src="./img/A.gif" alt="">
             <img src="./img/B.gif" alt="">
             <img src="./img/V.gif" alt="">
             <img src="./img/G.gif" alt="">
             <img src="./img/D.gif" alt=""> <br>
-            <input  class="inp13" placeholder="В ответе одна буква (раскладка - кириллица), например, А" type="text">
+            <input class="inp13" placeholder="В ответе одна буква (раскладка - кириллица), например, А" type="text">
         </div>
         <div class="btns">
-            <div class="btn"><button class="result">Проверить ответы</button></div>
-            <div class="btn"><button class="cheets">Показать правильные ответы</button></div>
-            <div class="btn"><button class="trueAns">Указать на неправильные ответы</button></div>
+            <div class="btn">
+                <button class="result">Проверить ответы</button>
+            </div>
+            <div class="btn">
+                <button class="cheets">Показать правильные ответы</button>
+            </div>
+            <div class="btn">
+                <button class="trueAns">Указать на неправильные ответы</button>
+            </div>
         </div>
         <div class="footter"><input class='passAnsw' type="password"></div>
-        <div><button class="showCalculator">Калькулятор</button></div>
+        <div class="btnCalcContainer">
+            <button class="showCalculator">Калькулятор</button>
+            <button class="showMU1">МУ 1</button>
+            <button class="showMU2">МУ 2</button>
+        </div>
         <div class="calculator-container">
-        
+
             <div class="calcDiv"><input class="calcInp" type="text"></div>
             <div class="calcDiv">+</div>
             <div class="calcDiv"><input class="calcInp" type="text"></div>
             <div class="calcDiv">=</div>
             <div class="calcSumm"></div>
-        
+
             <div class="calcDiv"><input class="calcInp" type="text"></div>
             <div class="calcDiv">-</div>
             <div class="calcDiv"><input class="calcInp" type="text"></div>
             <div class="calcDiv">=</div>
             <div class="calcSubtraction"></div>
-        
+
             <div class="calcDiv"><input class="calcInp" type="text"></div>
             <div class="calcDiv">*</div>
             <div class="calcDiv"><input class="calcInp" type="text"></div>
             <div class="calcDiv">=</div>
             <div class="calcMultipl"></div>
-        
+
             <div class="calcDiv"><input class="calcInp" type="text"></div>
             <div class="calcDiv">/</div>
             <div class="calcDiv"><input class="calcInp" type="text"></div>
             <div class="calcDiv">=</div>
             <div class="calcDevide"></div>
-            <div class="calcDiv"></div><div class="calcDiv"><button class="calcStart" >Вычислить</button></div>
+            <div class="calcDiv"></div>
+            <div class="calcDiv">
+                <button class="calcStart">Вычислить</button>
+            </div>
         </div>
+
+        <div class="MU1-container">
+            <div class="MU1">
+                <img src="./img/11.png" alt="">
+                <img src="./img/12.png" alt="">
+            </div>
         </div>
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+        <div class="MU2-container">
+            <div class="MU2">
+                <img src="./img/21.png" alt="">
+                <img src="./img/22.png" alt="">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script defer src="script.js"></script>
+<link rel="stylesheet" href="style.css">
 </body>
+
 </html>

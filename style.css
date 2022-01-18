@@ -1,4 +1,4 @@
-.{
+*{
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -7,9 +7,7 @@ body{
     background-color: #efefef;
 }
 
-div{/* 
-    border: 1px solid black;
- */
+div{
     margin: 10px;
 }
 
@@ -18,7 +16,6 @@ div{/*
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;
-    /* background-color: honeydew; */
 }
 
 h4{
@@ -30,10 +27,10 @@ h4{
     padding-top: 0px;
 }
 
-.generate, .result, .cheets, .clos, .startButton, .trueAns, .showCalculator{
+.generate, .result, .cheets, .clos, .startButton, .trueAns, .showCalculator, .showMU1, .showMU2{
     border-radius: 5px;
     min-height: 25px;
-    min-width: 170px;
+    min-width: 233px;
     margin: auto;
     margin-top: 25px;
     font-size: 28px;
@@ -48,7 +45,7 @@ h4{
     margin-top: 0px;
 }
 
-.generate:hover, .result:hover, .cheets:hover, .clos:hover, .startButton:hover, .trueAns:hover, .showCalculator:hover{
+.generate:hover, .result:hover, .cheets:hover, .clos:hover, .startButton:hover, .trueAns:hover, .showCalculator:hover, .showMU1:hover, .showMU2:hover{
     cursor: pointer;
     background-color: #1f318e !important;
     color: #ffffff !important;
@@ -101,7 +98,7 @@ div div div {
 }
 
 .mess{
-    margin: 300px auto;
+    margin: 100px auto;
     padding: 20px;
     width: 50%;
     z-index: 1500;
@@ -144,9 +141,9 @@ div div div {
 }
 
 .chooseTest{
-    margin: 150px auto;
+    margin: 100px auto;
     padding: 20px;
-    width: 20%;
+    width: 60%;
     z-index: 1700;
     background-color: #efefef;
     text-align: center;
@@ -167,17 +164,17 @@ div div div {
     border: 6px solid rgb(100, 160, 255);
 }
 
-.trueAns, .showCalculator{
-    width: 735px;
+.trueAns{
+    width: 750px;
     margin-bottom: 5px;
 }
 .btns{
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 0;
-    
+
 }
 .btn{
     margin: 0;
@@ -201,8 +198,8 @@ div div div {
     flex-wrap: wrap;
 }
 
-.showCalculator{
-    margin: 0 0 0 15px;
+.showCalculator, .showMU1, .showMU2{
+    margin: 0;
 }
 
 .calcInp{
@@ -212,7 +209,7 @@ div div div {
 }
 
 .non{
-    display: flex;
+    display: flex !important;
 }
 
 
@@ -223,4 +220,33 @@ textarea{
     left: 20px;
     font-size: 20px;
     font-weight: bold;
+    width: 15%;
+    height: 500px;
+}
+
+.btnCalcContainer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+.MU1 img, .MU2 img {
+    width: 750px;
+    padding: 0;
+    margin: 0;
+}
+.MU1-container,.MU2-container{
+    align-items: center;
+    display: none;
+    width: 560px;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.MU1, .MU2{
+    padding: 0;
+    margin: 0;
+    width: 25px;
 }
