@@ -11,9 +11,6 @@ document.querySelector('body').oncontextmenu = () => {
     return false
 };
 
-// закрываем приветственное окно
-//startButton.onclick = () => document.querySelector('.start').style.display = 'none';
-
 let q2;                                // переменные q будут содержать массивы данных для подстановки в вопросы
 let q3;
 let q4;
@@ -23,7 +20,7 @@ let q7;
 let q8;
 let q9;
 let q10;
-
+let q11;
 let q012;
 let q212;
 let q312;
@@ -57,17 +54,26 @@ const qts = [
     [0.008, 0.027, 0.014, 0.017, 0.028, 0.007, 0.012, 0.022, 0.022, 0.013]
 ];
 
-
+//массивы данных для расчета правильных ответов на 11 вопрос
+const lambda1 = [6.71, 3.18, 1.16, 3.72, 4.25, 0.82, 4.74, 0.70, 8.40, 0.59];
+const lambda2 = [0.0000246, 0.0000825, 0.0000279, 0.0000481, 0.0000149, 0.0000874, 0.0000287, 0.0000772, 0.0000976, 0.0000492];
+const Tu = [0.028, 0.091, 0.036, 0.071, 0.032, 0.066, 0.084, 0.030, 0.016, 0.046];
+const k = [0.0086, 0.0020, 0.0027, 0.0067, 0.0032, 0.0016, 0.0037, 0.0042, 0.0008, 0.0047];
+const mu2 = [0.8, 1.5, 1.4, 2.0, 0.9, 0.6, 1.7, 1.2, 1.9, 1.3];
 
 let j;
 let i;
 let m;
-
+let z;
+let c;
+let P2;
+let sigma1;
+let tauAO;
 let UrRisk;
 
 let FIO = document.querySelector('.inp0');          // получаем поле ввода ФИО
 let block = document.querySelector('.block');       // получаем сервый фон при всплывающем сообщении
-
+let mess = document.querySelector('.mess');         // получаем всплывающее сообщение
 let tex = document.querySelector('.tex');           // получаем поле вывода текста в всплывающем сообщении
 let ball;                                           // переменная в которую складывается полученный балл за правильные ответы
 
@@ -98,7 +104,7 @@ let inp7 = document.querySelector('.inp7');                     // в перем
 let inp8 = document.querySelectorAll('.inp8');                  // в переменных берутся инпуты: чек-боксы и поля ввода (введенные ответы)
 let inp9 = document.querySelectorAll('.inp9');                  // в переменных берутся инпуты: чек-боксы и поля ввода (введенные ответы)
 let inp10 = document.querySelector('.inp10');                   // в переменных берутся инпуты: чек-боксы и поля ввода (введенные ответы)
-
+let inp11 = document.querySelector('.inp11');                   // в переменных берутся инпуты: чек-боксы и поля ввода (введенные ответы)
 let inp12 = document.querySelector('.inp12');                    // в переменных берутся инпуты: чек-боксы и поля ввода (введенные ответы)
 let inp13 = document.querySelector('.inp13');                    // в переменных берутся инпуты: чек-боксы и поля ввода (введенные ответы)
 
@@ -177,8 +183,8 @@ function formQuest() {
     q8 = ['имитационном моделировании', 'статистической информации', 'экспертной оценке', 'всей имеющейся информации', 'математическом моделировании'];
     q9 = ['перевод объекта инфраструктуры в защищенное состояние', 'факт присутствия помощника машиниста в кабине локомотива', 'изменение структуры технического средства', 'перераспределение функций между человеком и техническим средством', 'увеличение периодичности проведения технической учебы', 'увеличение периодичности технического обслуживания объектов инфраструктуры'];
     q10 = [`<i>Q</i><sub><i>t</i></sub>(<i>S<sub>ok</sub></i><sup>${Math.floor(Math.random() * (10 - 1)) + 1}</sup>)`, `<i>P</i><sub><i>t</i></sub>(<i>S<sub>ok</sub></i><sup>${Math.floor(Math.random() * (10 - 1)) + 1}</sup>)`];
-
-    q012 = [/*'безопасности',*/ 'безотказности'];
+    q11 = ['<i>P</i><sub>2</sub>'];
+    q012 = ['безотказности'];
     q112 = [`${(Math.random() * (0.9 - 0.1) + 0.1).toFixed(2)}*10<sup>-${Math.floor(Math.random() * (7 - 1)) + 1}</sup>`];
     q212 = [Math.floor(Math.random() * (4000000 - 50)) + 50];
     q312 = ['незначительный', 'серьезный', 'критический', 'катастрофический'];
@@ -208,9 +214,11 @@ function formQuest() {
     s100.innerHTML += Math.floor(Math.random() * (9 - 0)) + 0;  // заполняем спан 1 в вопросе 10
     let s101 = document.querySelector('#s101');
     s101.innerHTML = q10[Math.floor(Math.random() * q10.length)]; // заполняем спан 2 в вопросе 10
-
-
-
+    let s11 = document.querySelector('#s110');
+    s110.innerHTML = Math.floor(Math.random() * (9 - 0)) + 0;
+    s110.innerHTML += Math.floor(Math.random() * (9 - 0)) + 0;  // заполняем спан 1 в вопросе 11
+    let s111 = document.querySelector('#s111');
+    s111.innerHTML = q11[Math.floor(Math.random() * q11.length)]; // заполняем спан 2 в вопросе 11
     let s120 = document.querySelector('#s120');
     s120.innerHTML = q012[Math.floor(Math.random() * q012.length)];   // заполняем спан 1 в вопросе 12
     let s121 = document.querySelector('#s121');
@@ -227,8 +235,6 @@ function formQuest() {
 
 // функция проверки правильности ответов
 function check() {
-
-
     score = 0;
     // проверка правильности ответа на первый вопрос:
     if (inp1.value.toUpperCase() == 'КООРДИНАТА' || inp1.value.toUpperCase() == 'МЕСТОПОЛОЖЕНИЕ') {
@@ -354,7 +360,7 @@ function check() {
         score += 2;
         document.querySelector('.qu7').setAttribute("name", "goodAnswer");
     }
-    if ((s70.innerHTML == 'полной потере технической системы') && ((inp7.value.toUpperCase() == 'КРИТИЧЕСКИЙ'))) {
+    if ((s70.innerHTML == 'полной потере технической системы') && ((inp7.value.toUpperCase() == 'КРИТИЧЕСКИЙ') || (inp7.value.toUpperCase() == 'КАТАСТРОФИЧЕСКИЙ'))) {
         score += 2;
         document.querySelector('.qu7').setAttribute("name", "goodAnswer");
     }
@@ -421,9 +427,54 @@ function check() {
         score += 3;
         document.querySelector('.qu10').setAttribute("name", "goodAnswer");
     }
+    // проверка правильности ответа на одиннадцатый вопрос:
+    z = s110.innerHTML[0];
+    c = s110.innerHTML[1];
+    P2 = (lambda2[z] / (lambda2[z] + mu2[z])).toFixed(6);
+    sigma1 = ((lambda1[z] / (1 / Tu[c])) + (lambda2[z] / mu2[z])).toFixed(6);
+    tauAO = ((Tu[c] * (k[c] / mu2[z])) / (Tu[c] + (k[c] / mu2[z]))).toFixed(6);
 
+    if (s111.innerHTML[6] == '1' && inp11.value.replace(',', '.') == sigma1) {
+        score += 3;
+        document.querySelector('.qu11').setAttribute("name", "goodAnswer");
+    }
+    if (s111.innerHTML[6] == 'i' && inp11.value.replace(',', '.') == P2) {
+        score += 3;
+        document.querySelector('.qu11').setAttribute("name", "goodAnswer");
+    }
+    if (s111.innerHTML[6] == 'A' && inp11.value.replace(',', '.') == tauAO) {
+        score += 3;
+        document.querySelector('.qu11').setAttribute("name", "goodAnswer");
+    }
     // проверка правильности ответа на двенадцатый вопрос:
     UrRisk = '';
+    if (s120.innerHTML == 'безопасности') {
+        if (+s121.innerHTML[13] >= 7) {
+            UrRisk += 'М';
+        } else if (+s121.innerHTML[13] >= 5) {
+            UrRisk += 'К';
+        } else if (+s121.innerHTML[13] >= 3) {
+            UrRisk += 'Р';
+        } else if (+s121.innerHTML[13] >= 1) {
+            UrRisk += 'С';
+        } else if (+s121.innerHTML[13] >= 0) {
+            UrRisk += 'В';
+        } else if (+s121.innerHTML[13] <= 1) {
+            UrRisk += 'Ч';
+        }
+        if (s123.innerHTML == 'незначительный') {
+            UrRisk += 1;
+        }
+        if (s123.innerHTML == 'серьезный') {
+            UrRisk += 2;
+        }
+        if (s123.innerHTML == 'критический') {
+            UrRisk += 3;
+        }
+        if (s123.innerHTML == 'катастрофический') {
+            UrRisk += 4;
+        }
+    }
     if (s120.innerHTML == 'безотказности') {
         if (+s124.innerHTML[13] >= 7) {
             UrRisk += 'М';
@@ -481,14 +532,14 @@ function check() {
         ball = '"отлично"! Оценка может быть выставлена в ведомость и зачетную книжку лишь при сданных контрольных работах (получено сообщение "к защите")';
     } else if (score > 14) {
         ball = '"хорошо". Оценка может быть выставлена в ведомость и зачетную книжку лишь при сданных контрольных работах (получено сообщение "к защите")';
-    } else if (score >= 11) {
+    } else if (score >= 10) {
         ball = '"удовлетворительно". Оценка может быть выставлена в ведомость и зачетную книжку лишь при сданных контрольных работах (получено сообщение "к защите")';
     } else {
         ball = '"неудовлетворительно". Пересдача по вторникам, время и аудиторию Вы можете уточнить на стенде у 307 аудитории либо в группе ВК: https://vk.com/suti_roat';
     }
     tex.innerHTML = FIO.value + ', Вы набрали ' + score + ' балл(ов)' + '<br>' + '<br>' + 'Оценка по дисциплине ТБДП: ' + ball;
     block.style.display = 'block';
-    if (score >= 11) {
+    if (score >= 10) {
         block.style.background = "rgba(33, 189, 1, 0.98)";
     } else {
         block.style.background = "rgba(196, 0, 0, 0.98)";
@@ -643,27 +694,35 @@ function answers() {
         console.log('10. ' + 'Qt(S/F) = ' + qts[j][m] + ', Qt(F) = ' + qt[i][m] + ', P = ' + (1 - (qts[j][m] * qt[i][m]).toFixed(9)));
     }
 
+    if (s111.innerHTML[6] == '1') {
+        console.log('11. ' + 'lambda1 = ' + lambda1[z] + ', Tu = ' + Tu[c] + ', lambda2 = ' + lambda2[z] + ', mu2 = ' + mu2[z] + ', sigma = ' + sigma1);
+    }
+    if (s111.innerHTML[6] == 'i') {
+        console.log('11. ' + 'lambda2 = ' + lambda2[z] + ', mu2 = ' + mu2[z] + ', P2 = ' + P2);
+    }
+    if (s111.innerHTML[6] == 'A') {
+        console.log('11. ' + 'Tu = ' + Tu[c] + ', k = ' + k[c] + ', mu2 = ' + mu2[z] + ', tauAO = ' + tauAO);
+    }
 
-
-    console.log('11. ' + UrRisk);
+    console.log('12. ' + UrRisk);
 
     if (s131.innerHTML == 'происходит безопасная эксплуатация объекта инфраструктуры') {
-        console.log('12. А');
+        console.log('13. А');
     }
     if (s131.innerHTML == 'возникает опасный отказ, но его устраняют до момента использования ОИ') {
-        console.log('12. Г');
+        console.log('13. Г');
     }
     if (s131.innerHTML == 'возникает опасный отказ в процессе использования ОИ') {
-        console.log('12. В');
+        console.log('13. В');
     }
     if (s131.innerHTML == 'возникает опасный отказ и его не успевают устранить') {
-        console.log('12. Б или Д');
+        console.log('13. Б или Д');
     }
     if (s131.innerHTML == 'процесс движения поезда постоянно находился в опасном состоянии') {
-        console.log('12. Д');
+        console.log('13. Д');
     }
     if (s131.innerHTML == 'произошел опасный отказ, но поражающие факторы не возникли') {
-        console.log('12. Г');
+        console.log('13. Г');
     }
 
 }
@@ -700,9 +759,9 @@ function displayTrueAnswers() {
     if (document.querySelector('.qu10').getAttribute("name") !== "goodAnswer") {
         document.querySelector('.qu10').classList.toggle('trueAnswer');
     }
-
-
-
+    if (document.querySelector('.qu11').getAttribute("name") !== "goodAnswer") {
+        document.querySelector('.qu11').classList.toggle('trueAnswer');
+    }
     if (document.querySelector('.qu12').getAttribute("name") !== "goodAnswer") {
         document.querySelector('.qu12').classList.toggle('trueAnswer');
     }
